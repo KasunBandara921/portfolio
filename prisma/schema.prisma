@@ -34,3 +34,11 @@ model Task {
   user        User     @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
 }
+
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  date        DateTime
+  type        String   // We will use "HOLIDAY" or "EVENT"
+  createdAt   DateTime @default(now())
+}
