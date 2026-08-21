@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -42,15 +41,6 @@ export default function Hero() {
           <p className="text-xl md:text-2xl text-[var(--color-muted)] max-w-2xl mx-auto mb-12 leading-relaxed">
             Building scalable full-stack applications with Next.js, Spring Boot, and PostgreSQL. Focused on elegant architecture and performance.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="flex items-center gap-2 px-8 py-4 bg-[var(--color-primary)] text-white rounded-full font-medium hover:opacity-90 transition-all duration-300 hover:scale-105 active:scale-95">
-              View Projects <ArrowRight size={18} />
-            </button>
-            <button className="flex items-center gap-2 px-8 py-4 bg-[var(--color-card)] border border-[var(--color-card-border)] text-[var(--color-foreground)] rounded-full font-medium hover:opacity-95 transition-all duration-300 hover:scale-105 active:scale-95">
-              Download Resume <Download size={18} />
-            </button>
-          </div>
         </motion.div>
       </div>
     </section>
