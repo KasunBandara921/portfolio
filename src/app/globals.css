@@ -1,41 +1,72 @@
 @import "tailwindcss";
 
 @theme {
-  /* Premium Neutral Dark Palette */
-  --color-background: #030303;
-  /* Almost black - deep and premium */
-  --color-foreground: #F4F4F5;
-  /* Crisp off-white */
-
-  --color-card: #0A0A0A;
-  /* Slightly lighter black for depth */
-  --color-card-border: #1F1F1F;
-  /* Subtle grey border */
-
-  --color-primary: #6366F1;
-  /* Indigo for subtle accents only */
-  --color-secondary: #8B5CF6;
-  /* Violet for secondary accents */
-  --color-muted: #71717A;
-  /* Muted grey text */
+  /* Premium Neutral Palette variables */
+  --color-background: var(--bg-color);
+  --color-foreground: var(--fg-color);
+  --color-card: var(--card-color);
+  --color-card-border: var(--card-border-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-muted: var(--muted-color);
 
   --radius-xl: 16px;
   --radius-2xl: 20px;
 }
 
+:root {
+  /* Dark mode variables (Default) */
+  --bg-color: #030303;
+  --fg-color: #F4F4F5;
+  --card-color: #0A0A0A;
+  --card-border-color: rgba(255, 255, 255, 0.06);
+  --primary-color: #6366F1;
+  --secondary-color: #8B5CF6;
+  --muted-color: #a1a1aa;
+
+  --hero-overlay-from: rgba(3, 3, 3, 0.2);
+  --hero-overlay-via: rgba(3, 3, 3, 0.55);
+  --hero-overlay-to: #030303;
+  --hero-img-opacity: 0.8;
+
+  --body-radial-top: rgba(99, 102, 241, 0.08);
+  --body-radial-bottom: rgba(139, 92, 246, 0.05);
+}
+
+html.light {
+  /* Light mode variables */
+  --bg-color: #FAFAFA;
+  --fg-color: #09090B;
+  --card-color: #FFFFFF;
+  --card-border-color: rgba(9, 9, 11, 0.06);
+  --primary-color: #4F46E5;
+  --secondary-color: #7C3AED;
+  --muted-color: #52525B;
+
+  --hero-overlay-from: rgba(250, 250, 250, 0.15);
+  --hero-overlay-via: rgba(250, 250, 250, 0.6);
+  --hero-overlay-to: #FAFAFA;
+  --hero-img-opacity: 0.3;
+
+  --body-radial-top: rgba(79, 70, 229, 0.05);
+  --body-radial-bottom: rgba(124, 58, 237, 0.03);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     background-image:
-      radial-gradient(ellipse 60% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
-      radial-gradient(ellipse 60% 50% at 50% 120%, rgba(139, 92, 246, 0.05), transparent);
+      radial-gradient(ellipse 60% 50% at 50% -20%, var(--body-radial-top), transparent),
+      radial-gradient(ellipse 60% 50% at 50% 120%, var(--body-radial-bottom), transparent);
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Custom subtle scrollbar */

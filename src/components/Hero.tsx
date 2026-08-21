@@ -13,10 +13,11 @@ export default function Hero() {
           src="/images/235017E - Kasun Bandara1.jpg"
           alt="Kasun Bandara Background"
           fill
-          className="object-cover object-top opacity-80"
+          className="object-cover object-top transition-opacity duration-300"
+          style={{ opacity: "var(--hero-img-opacity, 0.8)" }}
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/55 to-[var(--color-background)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--hero-overlay-from)] via-[var(--hero-overlay-via)] to-[var(--hero-overlay-to)]" />
       </div>
 
       {/* Content centered in the first fold (min-h-screen) */}
@@ -25,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="backdrop-blur-md bg-black/50 border border-white/10 p-8 md:p-12 rounded-[32px] shadow-2xl w-full"
+          className="backdrop-blur-md bg-[var(--color-card)]/70 border border-[var(--color-card-border)] p-8 md:p-12 rounded-[32px] shadow-2xl w-full"
         >
           {/* Capsule Profile Image hidden temporarily for full screen view */}
 
@@ -46,7 +47,7 @@ export default function Hero() {
             <button className="flex items-center gap-2 px-8 py-4 bg-[var(--color-primary)] text-white rounded-full font-medium hover:opacity-90 transition-all duration-300 hover:scale-105 active:scale-95">
               View Projects <ArrowRight size={18} />
             </button>
-            <button className="flex items-center gap-2 px-8 py-4 bg-[var(--color-card)] border border-white/10 text-[var(--color-foreground)] rounded-full font-medium hover:bg-[var(--color-card-hover)] transition-all duration-300">
+            <button className="flex items-center gap-2 px-8 py-4 bg-[var(--color-card)] border border-[var(--color-card-border)] text-[var(--color-foreground)] rounded-full font-medium hover:opacity-95 transition-all duration-300 hover:scale-105 active:scale-95">
               Download Resume <Download size={18} />
             </button>
           </div>

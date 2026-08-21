@@ -13,7 +13,7 @@ export default function About() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="relative aspect-square rounded-[32px] overflow-hidden bg-[var(--color-card)] border border-white/10"
+          className="relative aspect-square rounded-[32px] overflow-hidden bg-[var(--color-card)] border border-[var(--color-card-border)]"
         >
           {/* You can place your professional photo here */}
           <div className="absolute inset-0 flex items-center justify-center text-[var(--color-muted)]">

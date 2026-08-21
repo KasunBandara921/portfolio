@@ -41,7 +41,7 @@ export default function Milestones() {
             </div>
 
             {/* Glowing Icon indicator on the vertical timeline line */}
-            <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-xl bg-[var(--color-card)] border border-white/10 flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/50 group-hover:bg-[var(--color-primary)]/10 transition-all duration-300 shadow-lg">
+            <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/50 group-hover:bg-[var(--color-primary)]/10 transition-all duration-300 shadow-lg">
               <Award size={16} className="group-hover:scale-110 transition-transform" />
             </div>
 
@@ -52,7 +52,7 @@ export default function Milestones() {
             </div>
 
             {/* Milestone Card */}
-            <div className="p-6 rounded-[24px] bg-[var(--color-card)] border border-white/5 group-hover:border-white/10 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 max-w-3xl">
+            <div className="p-6 rounded-[24px] bg-[var(--color-card)] border border-[var(--color-card-border)] group-hover:border-[var(--color-primary)]/30 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 max-w-3xl">
               <h3 className="text-xl font-bold text-[var(--color-foreground)] mb-2 flex items-center gap-2">
                 {milestone.title}
                 <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-[var(--color-primary)]" />

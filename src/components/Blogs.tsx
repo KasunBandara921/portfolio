@@ -39,7 +39,7 @@ export default function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="group relative p-8 rounded-[32px] bg-[var(--color-card)] border border-white/5 hover:border-[var(--color-primary)]/30 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
+            className="group relative p-8 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] hover:border-[var(--color-primary)]/30 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
           >
             <div>
               {/* Blog Date Tag */}

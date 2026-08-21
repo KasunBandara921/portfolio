@@ -50,7 +50,7 @@ export default function Contact() {
 
           <div className="space-y-6">
             <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-white/5 flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
                 <Mail size={20} />
               </div>
               <div>
@@ -62,7 +62,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-white/5 flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
                 <MapPin size={20} />
               </div>
               <div>
@@ -77,7 +77,7 @@ export default function Contact() {
 
         {/* Form Column */}
         <div className="md:col-span-3">
-          <div className="p-8 rounded-[32px] bg-[var(--color-card)] border border-white/5 relative overflow-hidden">
+          <div className="p-8 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] relative overflow-hidden">
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -90,7 +90,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 rounded-2xl bg-black/30 border border-white/10 text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 transition-all"
+                    className="w-full px-5 py-4 rounded-2xl bg-[var(--color-background)]/50 border border-[var(--color-card-border)] text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-5 py-4 rounded-2xl bg-black/30 border border-white/10 text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 transition-all"
+                    className="w-full px-5 py-4 rounded-2xl bg-[var(--color-background)]/50 border border-[var(--color-card-border)] text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl bg-black/30 border border-white/10 text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 resize-none transition-all"
+                  className="w-full px-5 py-4 rounded-2xl bg-[var(--color-background)]/50 border border-[var(--color-card-border)] text-[var(--color-foreground)] placeholder-zinc-500 focus:outline-none focus:border-[var(--color-primary)]/50 focus:ring-1 focus:ring-[var(--color-primary)]/50 resize-none transition-all"
                   placeholder="How can I help you?"
                 />
               </div>

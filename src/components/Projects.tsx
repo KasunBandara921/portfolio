@@ -39,7 +39,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            className="group relative p-6 rounded-[24px] bg-[var(--color-card)] border border-white/5 hover:border-[var(--color-primary)]/30 transition-all duration-500"
+            className="group relative p-6 rounded-[24px] bg-[var(--color-card)] border border-[var(--color-card-border)] hover:border-[var(--color-primary)]/30 transition-all duration-500"
           >
             {/* Project Image */}
             <div className="h-74 w-full bg-[var(--color-secondary)]/10 rounded-xl mb-6 overflow-hidden relative">
