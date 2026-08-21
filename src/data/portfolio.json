@@ -27,8 +27,23 @@
       "demo": ""
     }
   ],
-  "experience": [
-    { "year": "2025", "title": "Industrial Engagement at IFS", "desc": "Software Engineering & SDLC" },
-    { "year": "2024", "title": "University of Moratuwa", "desc": "Started B.Sc in IT & Management" }
+  "milestones": [
+    { "year": "2026", "title": "First Open Source Contribution", "desc": "Contributed to a major React components ecosystem library." },
+    { "year": "2025", "title": "Industrial Engagement at IFS", "desc": "Worked on software engineering and SDLC phases." },
+    { "year": "2024", "title": "University of Moratuwa", "desc": "Started B.Sc in IT & Management." }
+  ],
+  "blogs": [
+    {
+      "title": "Optimizing Next.js for Static Portfolio Websites",
+      "summary": "How to leverage static exports and clean bundles to build lightning-fast personal sites.",
+      "date": "Aug 2026",
+      "link": "#"
+    },
+    {
+      "title": "A Deep Dive into Spring Boot Architecture",
+      "summary": "Exploring dependency injection, application layering, and RESTful service design principles.",
+      "date": "Jun 2026",
+      "link": "#"
+    }
   ]
 }
