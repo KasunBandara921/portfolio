@@ -32,13 +32,13 @@ export default function NavBar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[var(--color-background)]/80 backdrop-blur-md border-b border-white/5 py-4 shadow-sm"
-          : "bg-transparent py-6"
+          ? "bg-[var(--color-background)]/90 backdrop-blur-md border-b border-white/5 py-4 shadow-lg shadow-black/20"
+          : "bg-black/30 backdrop-blur-md border-b border-white/5 py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-tighter text-[var(--color-foreground)]">
+        <Link href="/" className="text-xl font-bold tracking-tighter text-[var(--color-foreground)] hover:opacity-90 transition-opacity">
           Kasun<span className="text-[var(--color-primary)]">.</span>
         </Link>
 
@@ -48,7 +48,7 @@ export default function NavBar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-[var(--color-muted)] hover:text-[var(--color-foreground)] transition-colors"
+              className="text-sm font-medium text-zinc-300 hover:text-white hover:scale-105 active:scale-95 transition-all duration-200"
             >
               {link.name}
             </Link>
@@ -60,7 +60,7 @@ export default function NavBar() {
           <a
             href="/resume.pdf"
             target="_blank"
-            className="px-5 py-2.5 rounded-full bg-[var(--color-card)] border border-white/10 text-[var(--color-foreground)] text-sm font-medium hover:bg-[var(--color-card-hover)] transition-colors"
+            className="px-5 py-2.5 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-zinc-200 text-sm font-medium hover:bg-[var(--color-primary)] hover:text-white hover:border-[var(--color-primary)] transition-all duration-300"
           >
             Resume
           </a>
