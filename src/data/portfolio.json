@@ -1,0 +1,34 @@
+{
+  "skills": [
+    { "name": "Next.js", "icon": "Layout" },
+    { "name": "Spring Boot", "icon": "Server" },
+    { "name": "PostgreSQL", "icon": "Database" },
+    { "name": "TypeScript", "icon": "Code2" },
+    { "name": "AWS", "icon": "Cloud" },
+    { "name": "Docker", "icon": "Terminal" },
+    { "name": "Git", "icon": "GitBranch" },
+    { "name": "Java", "icon": "Cpu" }
+  ],
+  "projects": [
+    {
+      "title": "Hotel Management System",
+      "description": "A robust booking platform for hotel resource management.",
+      "stack": ["Next.js", "TypeScript", "Spring Boot"],
+      "image": "/pos.png",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "title": "Task Management SaaS",
+      "description": "Full-stack project tracking with real-time updates.",
+      "stack": ["React", "PostgreSQL", "Prisma"],
+      "image": "",
+      "github": "",
+      "demo": ""
+    }
+  ],
+  "experience": [
+    { "year": "2025", "title": "Industrial Engagement at IFS", "desc": "Software Engineering & SDLC" },
+    { "year": "2024", "title": "University of Moratuwa", "desc": "Started B.Sc in IT & Management" }
+  ]
+}

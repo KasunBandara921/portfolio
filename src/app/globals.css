@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Premium Neutral Dark Palette */
+  --color-background: #030303;
+  /* Almost black - deep and premium */
+  --color-foreground: #F4F4F5;
+  /* Crisp off-white */
+
+  --color-card: #0A0A0A;
+  /* Slightly lighter black for depth */
+  --color-card-border: #1F1F1F;
+  /* Subtle grey border */
+
+  --color-primary: #6366F1;
+  /* Indigo for subtle accents only */
+  --color-secondary: #8B5CF6;
+  /* Violet for secondary accents */
+  --color-muted: #71717A;
+  /* Muted grey text */
+
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image:
+      radial-gradient(ellipse 60% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
+      radial-gradient(ellipse 60% 50% at 50% 120%, rgba(139, 92, 246, 0.05), transparent);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272A;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3F3F46;
+  }
 }
