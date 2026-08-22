@@ -1,19 +1,50 @@
 {
   "skills": [
-    { "name": "Next.js", "icon": "Layout" },
-    { "name": "Spring Boot", "icon": "Server" },
-    { "name": "PostgreSQL", "icon": "Database" },
-    { "name": "TypeScript", "icon": "Code2" },
-    { "name": "AWS", "icon": "Cloud" },
-    { "name": "Docker", "icon": "Terminal" },
-    { "name": "Git", "icon": "GitBranch" },
-    { "name": "Java", "icon": "Cpu" }
+    {
+      "name": "Next.js",
+      "icon": "Layout"
+    },
+    {
+      "name": "Spring Boot",
+      "icon": "Server"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "Database"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "Code2"
+    },
+    {
+      "name": "AWS",
+      "icon": "Cloud"
+    },
+    {
+      "name": "Docker",
+      "icon": "Terminal"
+    },
+    {
+      "name": "Git",
+      "icon": "GitBranch"
+    },
+    {
+      "name": "Java",
+      "icon": "Cpu"
+    }
   ],
   "projects": [
     {
-      "title": "Hotel Management System",
-      "description": "A robust booking platform for hotel resource management.",
-      "stack": ["Next.js", "TypeScript", "Spring Boot"],
+      "title": "AI-powered POS system",
+      "description": "Developed a full-stack AI-powered POS system with cashier checkout, inventory management, sales analytics, receipt generation, multi-payment support, role-based access control, and English/Sinhala support. Implemented real-time stock alerts using SSE, automated inventory updates with PostgreSQL transactions, and AI-powered business recommendations using Hugging Face and Gemini APIs.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Spring Boot",
+        "PostgreSQL",
+        "AWS",
+        "Docker"  
+      ],
       "image": "/pos.png",
       "github": "",
       "demo": ""
@@ -21,16 +52,32 @@
     {
       "title": "Task Management SaaS",
       "description": "Full-stack project tracking with real-time updates.",
-      "stack": ["React", "PostgreSQL", "Prisma"],
+      "stack": [
+        "React",
+        "PostgreSQL",
+        "Prisma"
+      ],
       "image": "",
       "github": "",
       "demo": ""
     }
   ],
   "milestones": [
-    { "year": "2026", "title": "First Open Source Contribution", "desc": "Contributed to a major React components ecosystem library." },
-    { "year": "2025", "title": "Industrial Engagement at IFS", "desc": "Worked on software engineering and SDLC phases." },
-    { "year": "2024", "title": "University of Moratuwa", "desc": "Started B.Sc in IT & Management." }
+    {
+      "year": "2026",
+      "title": "First Open Source Contribution",
+      "desc": "Contributed to a major React components ecosystem library."
+    },
+    {
+      "year": "2025",
+      "title": "Industrial Engagement at IFS",
+      "desc": "Worked on software engineering and SDLC phases."
+    },
+    {
+      "year": "2024",
+      "title": "University of Moratuwa",
+      "desc": "Started B.Sc in IT & Management."
+    }
   ],
   "blogs": [
     {
