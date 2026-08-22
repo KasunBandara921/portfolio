@@ -19,6 +19,35 @@ interface Project {
   demo?: string;
 }
 
+const techEmojis: Record<string, string> = {
+  "react": "⚛️",
+  "next": "🚀",
+  "typescript": "🔷",
+  "javascript": "🟨",
+  "spring": "🍃",
+  "postgres": "🐘",
+  "prisma": "◬",
+  "java": "☕",
+  "python": "🐍",
+  "docker": "🐳",
+  "aws": "☁️",
+  "tailwind": "🌊",
+  "node": "🟢",
+  "git": "🐙",
+  "firebase": "🔥",
+  "mongodb": "💾"
+};
+
+function getTechEmoji(tech: string): string {
+  const normalized = tech.toLowerCase().trim();
+  for (const [key, value] of Object.entries(techEmojis)) {
+    if (normalized.includes(key)) {
+      return value;
+    }
+  }
+  return "💻";
+}
+
 export default function Projects() {
   const projects: Project[] = portfolioData.projects;
 
@@ -62,11 +91,18 @@ export default function Projects() {
             <p className="text-[var(--color-muted)] mb-6">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-8">
-              {project.stack.map((tech) => (
-                <span key={tech} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-[var(--color-foreground)]/70">
-                  {tech}
-                </span>
-              ))}
+              {project.stack.map((tech) => {
+                const emoji = getTechEmoji(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-[var(--color-foreground)]/70 border border-white/10 hover:bg-white/10 hover:text-[var(--color-foreground)] transition-all duration-300"
+                  >
+                    <span>{emoji}</span>
+                    <span>{tech}</span>
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex gap-4">
