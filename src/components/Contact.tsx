@@ -55,8 +55,8 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-xs font-semibold text-[var(--color-muted)] uppercase tracking-wider">Email</h4>
-                <a href="mailto:kasun.bandara@uom.lk" className="text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors">
-                  kasun.bandara@uom.lk
+                <a href="mailto:bandarakasun495@gmail.com" className="text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors">
+                  bandarakasun495@gmail.com
                 </a>
               </div>
             </div>
