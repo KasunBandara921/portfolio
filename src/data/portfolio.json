@@ -81,16 +81,18 @@
   ],
   "blogs": [
     {
-      "title": "Optimizing Next.js for Static Portfolio Websites",
-      "summary": "How to leverage static exports and clean bundles to build lightning-fast personal sites.",
-      "date": "Aug 2026",
-      "link": "#"
+      "title": "Demystifying Spring Boot(A Beginner’s Guide)",
+      "summary": "If you are stepping into the world of enterprise Java development, there is one framework you cannot ignore that is Spring Boot.",
+      "date": "June 2026",
+      "link": "https://medium.com/@kasunbandara_56722/demystifying-spring-boot-a-beginners-guide-36422ea9fd62",
+      "image": "/images/spring-boot-guide.png"
     },
     {
       "title": "A Deep Dive into Spring Boot Architecture",
       "summary": "Exploring dependency injection, application layering, and RESTful service design principles.",
       "date": "Jun 2026",
-      "link": "#"
+      "link": "#",
+      "image": ""
     }
   ]
 }

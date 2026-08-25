@@ -9,6 +9,7 @@ interface Blog {
   summary: string;
   date: string;
   link: string;
+  image?: string;
 }
 
 export default function Blogs() {
@@ -42,6 +43,17 @@ export default function Blogs() {
             className="group relative p-8 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] hover:border-[var(--color-primary)]/30 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
           >
             <div>
+              {/* Blog Image */}
+              {blog.image && (
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-[var(--color-card-border)] bg-zinc-900/50">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                  />
+                </div>
+              )}
+
               {/* Blog Date Tag */}
               <div className="flex items-center gap-2 text-xs font-mono text-[var(--color-muted)] mb-6">
                 <Calendar size={12} />
