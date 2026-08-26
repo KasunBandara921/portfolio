@@ -61,6 +61,20 @@
       "image": "/expense-manager.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "AI-powered Sleep Tracker",
+      "description": "Developed a full-stack sleep tracking application with AI-powered sleep quality insights and personalized wellness recommendations. Implemented secure authentication, sleep cycle tracking, database management, and interactive sleep data visualization using modern web technologies.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Gemini API"
+      ],
+      "image": "/sleep-tracker.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
