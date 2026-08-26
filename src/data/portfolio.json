@@ -43,7 +43,7 @@
         "Spring Boot",
         "PostgreSQL",
         "AWS",
-        "Docker"  
+        "Docker"
       ],
       "image": "/pos.png",
       "github": "",
@@ -96,9 +96,9 @@
     },
     {
       "title": "My Journey into Software Engineering as a Second-Year University Student",
-      "summary": "An honest reflection on transitioning from 'just coding' to understanding systems, software engineering principles, Kanban, Scrum, and balancing theory with real-world practice.",
+      "summary": "When I started my degree in Information Technology, I thought software engineering was just about writing code. If you can build an app or write a program that works, that’s it, right?",
       "date": "Sep 25, 2025",
-      "link": "https://medium.com/@kasunbandara_56722/my-journey-into-software-engineering-as-a-second-year-university-student-6f17e3f48c0a",
+      "link": "https://medium.com/@kasunbandara_56722/my-journey-into-software-engineering-as-a-second-year-university-student-0bdffb7d7463",
       "image": "/images/software-engineering-principles.jpg"
     }
   ]
