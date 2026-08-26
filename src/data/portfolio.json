@@ -101,6 +101,22 @@
       "image": "/car-showcase.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "IoT-based Artifact Monitoring System",
+      "description": "Developed an IoT-based monitoring system with real-time sensor data, web-based monitoring, database integration, and automated alerts. Contributed to Arduino/ESP8266 programming, device communication, I2C integration, and system integration.",
+      "stack": [
+        "C/C++",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "Firebase",
+        "ESP8266",
+        "Arduino"
+      ],
+      "image": "/iot-monitoring.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
