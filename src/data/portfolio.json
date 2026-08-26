@@ -51,10 +51,9 @@
     },
     {
       "title": "AI-powered Expense Manager",
-      "description": "A sophisticated, secure, and data-driven platform for automating, tracking, and optimizing personal and corporate expenses. Features AI scanning, smart categorization, spending patterns & forecasts, budget utilization, and secure bank sync.",
+      "description": "Developed a full-stack expense management application with AI-powered spending insights and personalized financial recommendations. Implemented secure authentication, expense tracking, database management, and interactive financial data visualization using modern web technologies.",
       "stack": [
         "Next.js",
-        "Spring Boot",
         "PostgreSQL",
         "Tailwind CSS",
         "Gemini API"
