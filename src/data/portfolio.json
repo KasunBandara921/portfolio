@@ -75,6 +75,19 @@
       "image": "/sleep-tracker.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "Open Source Contribution",
+      "description": "Implemented dynamic custom category management for the Add Resource module, including persistent categories, inline creation and deletion, validation, and an interactive category-tag UI.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ],
+      "image": "/open-source.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
