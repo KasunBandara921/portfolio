@@ -50,14 +50,16 @@
       "demo": ""
     },
     {
-      "title": "Task Management SaaS",
-      "description": "Full-stack project tracking with real-time updates.",
+      "title": "AI-powered Expense Manager",
+      "description": "A sophisticated, secure, and data-driven platform for automating, tracking, and optimizing personal and corporate expenses. Features AI scanning, smart categorization, spending patterns & forecasts, budget utilization, and secure bank sync.",
       "stack": [
-        "React",
+        "Next.js",
+        "Spring Boot",
         "PostgreSQL",
-        "Prisma"
+        "Tailwind CSS",
+        "Gemini API"
       ],
-      "image": "",
+      "image": "/expense-manager.jpg",
       "github": "",
       "demo": ""
     }
