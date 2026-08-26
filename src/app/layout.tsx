@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Navbar"; // Make sure the capital B matches your file name!
+import ScrollWheel from "@/components/ScrollWheel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,8 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+
+        <ScrollWheel />
       </body>
     </html>
   );
