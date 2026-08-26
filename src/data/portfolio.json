@@ -91,8 +91,15 @@
       "title": "React vs. Next.js in 2026",
       "summary": "As a second-year IT undergraduate, diving into modern web development can feel like drinking from a firehose. Just when you feel like you’ve finally wrapped your head around React, components, and state management, you look online and see everyone talking about Next.js.",
       "date": "Jun 18, 2026",
-      "link": "#",
+      "link": "https://medium.com/@kasunbandara_56722/react-vs-next-js-in-2026-0f8c51e32955",
       "image": "/images/react-vs-nextjs.jpg"
+    },
+    {
+      "title": "My Journey into Software Engineering as a Second-Year University Student",
+      "summary": "An honest reflection on transitioning from 'just coding' to understanding systems, software engineering principles, Kanban, Scrum, and balancing theory with real-world practice.",
+      "date": "Sep 25, 2025",
+      "link": "https://medium.com/@kasunbandara_56722/my-journey-into-software-engineering-as-a-second-year-university-student-6f17e3f48c0a",
+      "image": "/images/software-engineering-principles.jpg"
     }
   ]
 }
