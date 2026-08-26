@@ -117,6 +117,19 @@
       "image": "/iot-monitoring.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "Salon Management System",
+      "description": "Developed a comprehensive salon management system to streamline client booking, appointment logs, service synchronization, secure payments, and staff performance analytics.",
+      "stack": [
+        "Next.js",
+        "Spring Boot",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "image": "/salon-management.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
