@@ -130,6 +130,18 @@
       "image": "/salon-management.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "Ice Cube Drop",
+      "description": "A relaxing 2D game built entirely from scratch in C++17 with the SFML graphics library. Implemented custom particle physics, screen transitions, score systems, and animations rendered purely in code without external assets.",
+      "stack": [
+        "C++",
+        "SFML",
+        "Game Design"
+      ],
+      "image": "/ice-cube-drop.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
