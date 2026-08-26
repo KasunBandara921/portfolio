@@ -88,6 +88,19 @@
       "image": "/open-source.jpg",
       "github": "",
       "demo": ""
+    },
+    {
+      "title": "Car Showcase Web Application",
+      "description": "Developed a responsive car showcase application with search, filtering, pagination, and dynamic vehicle data. Integrated external APIs and built reusable, type-safe components using Next.js and TypeScript.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "REST API"
+      ],
+      "image": "/car-showcase.jpg",
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
