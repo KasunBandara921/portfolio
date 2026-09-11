@@ -86,4 +86,11 @@ html.light {
   ::-webkit-scrollbar-thumb:hover {
     background: #3F3F46;
   }
+
+  /* Custom circle cursor on devices with fine pointer (mouse) */
+  @media (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
 }
