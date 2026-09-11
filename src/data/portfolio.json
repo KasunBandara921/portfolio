@@ -36,21 +36,25 @@
   "currently": [
     {
       "icon": "Code2",
+      "tag": "In Development",
       "title": "Building & Architecting",
       "desc": "Developing full-stack web applications with Next.js, TypeScript, and Spring Boot microservices."
     },
     {
       "icon": "Sparkles",
+      "tag": "R&D",
       "title": "AI & System Integration",
       "desc": "Integrating LLMs (Gemini, Hugging Face) and exploring real-time streaming architectures."
     },
     {
       "icon": "BookOpen",
+      "tag": "Skill Expansion",
       "title": "Continuous Learning",
       "desc": "Diving into Cloud infrastructure (AWS), Docker containerization, and PostgreSQL query optimization."
     },
     {
       "icon": "Target",
+      "tag": "Open For Roles",
       "title": "Current Goal",
       "desc": "Seeking software engineering internship opportunities and active open-source collaborations."
     }
