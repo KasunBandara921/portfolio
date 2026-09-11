@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Search, Command } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -47,6 +47,10 @@ export default function NavBar() {
     }
   };
 
+  const openCommandPalette = () => {
+    window.dispatchEvent(new CustomEvent("open-command-palette"));
+  };
+
   // Detect scroll to trigger the glassmorphism effect
   useEffect(() => {
     const handleScroll = () => {
@@ -86,8 +90,21 @@ export default function NavBar() {
           ))}
         </nav>
 
-        {/* Controls (Theme Toggle + Resume + Mobile Menu) */}
-        <div className="flex items-center gap-4">
+        {/* Controls (Command Palette + Theme Toggle + Resume + Mobile Menu) */}
+        <div className="flex items-center gap-3 md:gap-4">
+          {/* Command Palette Trigger Button */}
+          <button
+            onClick={openCommandPalette}
+            aria-label="Open Command Palette"
+            className="flex items-center gap-2 px-3 py-2 rounded-full bg-[var(--color-card)] border border-[var(--color-card-border)] text-zinc-300 hover:text-white hover:border-[var(--color-primary)]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-md text-xs font-medium"
+          >
+            <Search size={15} className="text-[var(--color-primary)]" />
+            <span className="hidden sm:inline text-zinc-400">Search</span>
+            <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-zinc-400">
+              <Command size={10} />K
+            </kbd>
+          </button>
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"

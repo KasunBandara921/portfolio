@@ -5,6 +5,7 @@ import NavBar from "@/components/Navbar"; // Make sure the capital B matches you
 import ScrollWheel from "@/components/ScrollWheel";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
+import CommandPalette from "@/components/CommandPalette";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <CustomCursor />
         <ScrollProgress />
+        <CommandPalette />
         {/* You must put the NavBar component here so it renders on every page! */}
         <NavBar />
         
