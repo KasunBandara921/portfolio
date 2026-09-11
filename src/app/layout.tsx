@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Navbar"; // Make sure the capital B matches your file name!
 import ScrollWheel from "@/components/ScrollWheel";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <ScrollProgress />
         {/* You must put the NavBar component here so it renders on every page! */}
         <NavBar />
         
