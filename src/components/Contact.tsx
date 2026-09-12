@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,32 +19,20 @@ export default function Contact() {
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      setIsSubmitting(false);
-      setErrorMessage(
-        "EmailJS credentials are not configured yet. Please configure NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY in your .env or contact directly via bandarakasun495@gmail.com."
-      );
-      return;
-    }
-
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          name: formData.name,
-          from_name: formData.name,
-          email: formData.email,
-          from_email: formData.email,
-          reply_to: formData.email,
-          message: formData.message,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        publicKey
-      );
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to deliver message.");
+      }
 
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -56,9 +43,11 @@ export default function Contact() {
     } catch (err: unknown) {
       console.error("Email send error:", err);
       setIsSubmitting(false);
-      setErrorMessage(
-        "Failed to deliver message via EmailJS. Please ensure your EmailJS credentials are valid or contact directly at bandarakasun495@gmail.com."
-      );
+      const msg =
+        err instanceof Error
+          ? err.message
+          : "Failed to deliver message. Please email directly at bandarakasun495@gmail.com.";
+      setErrorMessage(msg);
     }
   };
 
