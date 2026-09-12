@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Award, Calendar, ChevronRight } from "lucide-react";
 import portfolioData from "@/data/portfolio.json";
 
@@ -13,7 +13,7 @@ interface Milestone {
 
 const quoteText = "“Frameworks change. Technologies evolve. Fundamentals endure.”";
 
-const quoteContainerVariants = {
+const quoteContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -24,7 +24,7 @@ const quoteContainerVariants = {
   },
 };
 
-const letterVariants = {
+const letterVariants: Variants = {
   hidden: { opacity: 0, y: 6, filter: "blur(4px)" },
   visible: {
     opacity: 1,
