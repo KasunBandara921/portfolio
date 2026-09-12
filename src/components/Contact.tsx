@@ -2,9 +2,20 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
-
+import {
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Copy,
+  Check,
+  ArrowUpRight,
+  Sparkles,
+} from "lucide-react";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import portfolioData from "@/data/portfolio.json";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +26,57 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const socials = portfolioData.socials || {
+    github: "https://github.com/KasunBandara921",
+    githubHandle: "@KasunBandara921",
+    linkedin: "https://www.linkedin.com/in/kasun-bandara",
+    linkedinHandle: "Kasun Bandara",
+    medium: "https://medium.com/@kasunbandara_56722",
+    mediumHandle: "@kasunbandara_56722",
+    email: "bandarakasun495@gmail.com",
+    location: "University of Moratuwa, Sri Lanka",
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(socials.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      handle: socials.githubHandle || "@KasunBandara921",
+      url: socials.github || "https://github.com/KasunBandara921",
+      icon: FaGithub,
+      description: "Explore repositories & source code",
+      badge: "Open Source",
+      hoverClass: "hover:border-zinc-500/40 hover:bg-zinc-800/40",
+      iconColor: "text-zinc-200 group-hover:text-white",
+    },
+    {
+      name: "LinkedIn",
+      handle: socials.linkedinHandle || "Kasun Bandara",
+      url: socials.linkedin || "https://www.linkedin.com/in/kasun-bandara",
+      icon: FaLinkedin,
+      description: "Connect for opportunities & networking",
+      badge: "Professional",
+      hoverClass: "hover:border-[#0a66c2]/40 hover:bg-[#0a66c2]/10",
+      iconColor: "text-[#0a66c2] group-hover:text-[#388bfd]",
+    },
+    {
+      name: "Medium",
+      handle: socials.mediumHandle || "@kasunbandara_56722",
+      url: socials.medium || "https://medium.com/@kasunbandara_56722",
+      icon: FaMedium,
+      description: "Read tech articles & engineering notes",
+      badge: "Publications",
+      hoverClass: "hover:border-emerald-500/40 hover:bg-emerald-500/10",
+      iconColor: "text-emerald-400 group-hover:text-emerald-300",
+    },
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,9 +120,14 @@ export default function Contact() {
     } catch (err: unknown) {
       console.error("Email send error:", err);
       setIsSubmitting(false);
-      
-      let msg = "Failed to deliver message. Please email directly at bandarakasun495@gmail.com.";
-      if (err && typeof err === "object" && "text" in err && typeof (err as { text: unknown }).text === "string") {
+
+      let msg = `Failed to deliver message. Please email directly at ${socials.email}.`;
+      if (
+        err &&
+        typeof err === "object" &&
+        "text" in err &&
+        typeof (err as { text: unknown }).text === "string"
+      ) {
         msg = (err as { text: string }).text;
       } else if (err instanceof Error) {
         msg = err.message;
@@ -76,49 +143,131 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="grid md:grid-cols-5 gap-16"
+        className="grid lg:grid-cols-12 gap-12 lg:gap-16"
       >
         {/* Info Column */}
-        <div className="md:col-span-2 space-y-8">
+        <div className="lg:col-span-5 space-y-8">
           <div>
-            <h2 className="text-4xl font-bold text-[var(--color-foreground)] mb-6">
-              Let's Connect
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-semibold uppercase tracking-wider mb-4">
+              <Sparkles size={13} />
+              Get In Touch
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[var(--color-foreground)] mb-4 tracking-tight">
+              Let&apos;s Connect
             </h2>
-            <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-              I'm always open to new opportunities, collaborations, or simply sharing thoughts on technology. Drop me a line, and I'll get back to you as soon as possible!
+            <p className="text-[var(--color-muted)] text-base md:text-lg leading-relaxed">
+              I&apos;m always open to new opportunities, collaborations, internships, or simply sharing thoughts on engineering. Drop me a line or connect via any platform below!
             </p>
           </div>
 
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
-                <Mail size={20} />
+          {/* Direct Contact Items */}
+          <div className="space-y-4">
+            {/* Email Card with Copy Action */}
+            <div className="p-4 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-between gap-4 group hover:border-[var(--color-primary)]/40 transition-all duration-300">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div className="w-11 h-11 rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <Mail size={19} />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-[11px] font-semibold text-[var(--color-muted)] uppercase tracking-wider">
+                    Direct Email
+                  </h4>
+                  <a
+                    href={`mailto:${socials.email}`}
+                    className="text-sm md:text-base font-medium text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors truncate block"
+                  >
+                    {socials.email}
+                  </a>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xs font-semibold text-[var(--color-muted)] uppercase tracking-wider">Email</h4>
-                <a href="mailto:bandarakasun495@gmail.com" className="text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors">
-                  bandarakasun495@gmail.com
-                </a>
-              </div>
+
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                title="Copy email address"
+                className="p-2.5 rounded-xl bg-[var(--color-background)]/70 hover:bg-[var(--color-primary)] hover:text-white text-[var(--color-muted)] border border-[var(--color-card-border)] transition-all shrink-0 cursor-pointer"
+              >
+                {copiedEmail ? <Check size={16} className="text-emerald-400" /> : <Copy size={16} />}
+              </button>
             </div>
 
-            <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center justify-center text-[var(--color-primary)] group-hover:border-[var(--color-primary)]/30 transition-all">
-                <MapPin size={20} />
+            {/* Location Card */}
+            <div className="p-4 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] flex items-center gap-3.5 group hover:border-[var(--color-primary)]/40 transition-all duration-300">
+              <div className="w-11 h-11 rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <MapPin size={19} />
               </div>
               <div>
-                <h4 className="text-xs font-semibold text-[var(--color-muted)] uppercase tracking-wider">Location</h4>
-                <p className="text-[var(--color-foreground)]">
-                  University of Moratuwa, Sri Lanka
+                <h4 className="text-[11px] font-semibold text-[var(--color-muted)] uppercase tracking-wider">
+                  Location
+                </h4>
+                <p className="text-sm md:text-base font-medium text-[var(--color-foreground)]">
+                  {socials.location}
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Social Profiles Grid */}
+          <div className="pt-2 space-y-3">
+            <h3 className="text-xs font-semibold text-[var(--color-muted)] uppercase tracking-wider">
+              Social Profiles & Links
+            </h3>
+            <div className="grid sm:grid-cols-1 gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group p-4 rounded-2xl bg-[var(--color-card)] border border-[var(--color-card-border)] ${social.hoverClass} transition-all duration-300 flex items-center justify-between`}
+                  >
+                    <div className="flex items-center gap-3.5 min-w-0">
+                      <div
+                        className={`w-11 h-11 rounded-xl bg-[var(--color-background)]/80 border border-[var(--color-card-border)] flex items-center justify-center shrink-0 ${social.iconColor} group-hover:scale-110 transition-all duration-300`}
+                      >
+                        <Icon size={19} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-sm text-[var(--color-foreground)] group-hover:text-[var(--color-primary)] transition-colors">
+                            {social.name}
+                          </span>
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--color-background)] border border-[var(--color-card-border)] text-[var(--color-muted)] font-medium">
+                            {social.badge}
+                          </span>
+                        </div>
+                        <p className="text-xs text-[var(--color-muted)] truncate mt-0.5">
+                          {social.handle}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="p-2 text-[var(--color-muted)] group-hover:text-[var(--color-foreground)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                      <ArrowUpRight size={16} />
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
 
         {/* Form Column */}
-        <div className="md:col-span-3">
-          <div className="p-8 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] relative overflow-hidden">
+        <div className="lg:col-span-7">
+          <div className="p-8 md:p-10 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] relative overflow-hidden shadow-2xl backdrop-blur-xl">
+            {/* Subtle background glow */}
+            <div className="absolute -top-24 -right-24 w-60 h-60 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="mb-6 relative z-10">
+              <h3 className="text-2xl font-bold text-[var(--color-foreground)] tracking-tight">
+                Send a Message
+              </h3>
+              <p className="text-sm text-[var(--color-muted)] mt-1">
+                Fill out the form below and I&apos;ll get back to you promptly.
+              </p>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
