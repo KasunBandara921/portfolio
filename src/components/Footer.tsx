@@ -76,16 +76,19 @@ export default function Footer() {
         </div>
 
         {/* Stylized Kasun Bandara Branding & Centered Copyright */}
-        <div className="w-full text-center space-y-4 select-none">
+        <div className="w-full text-center space-y-2 select-none">
           <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none bg-gradient-to-b from-[var(--color-foreground)]/25 via-[var(--color-foreground)]/10 to-transparent bg-clip-text text-transparent uppercase pointer-events-none">
             Kasun Bandara
           </h2>
           <p className="text-xs sm:text-sm text-[var(--color-muted)] tracking-wide">
             © 2026 Kasun Bandara. All rights reserved.
           </p>
+          <p className="text-[11px] sm:text-xs text-[var(--color-muted)]/80 font-medium tracking-wider uppercase">
+            Powered by OOP
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
+
