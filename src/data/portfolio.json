@@ -208,5 +208,15 @@
       "link": "https://medium.com/@kasunbandara_56722/my-journey-into-software-engineering-as-a-second-year-university-student-0bdffb7d7463",
       "image": "/images/software-engineering-principles.jpg"
     }
-  ]
+  ],
+  "socials": {
+    "github": "https://github.com/KasunBandara921",
+    "githubHandle": "@KasunBandara921",
+    "linkedin": "https://www.linkedin.com/in/kasun-bandara",
+    "linkedinHandle": "Kasun Bandara",
+    "medium": "https://medium.com/@kasunbandara_56722",
+    "mediumHandle": "@kasunbandara_56722",
+    "email": "bandarakasun495@gmail.com",
+    "location": "University of Moratuwa, Sri Lanka"
+  }
 }
