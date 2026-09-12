@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Award, Calendar, ChevronRight } from "lucide-react";
 import portfolioData from "@/data/portfolio.json";
@@ -10,12 +11,83 @@ interface Milestone {
   desc: string;
 }
 
+const quoteText = "“Frameworks change. Technologies evolve. Fundamentals endure.”";
+
+const quoteContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.025,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 6, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function Milestones() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const milestones: Milestone[] = portfolioData.milestones;
 
   return (
     <section id="milestones" className="py-32 px-6 max-w-5xl mx-auto">
       <div className="text-center mb-20">
+        <motion.div
+          animate={
+            isLoaded
+              ? {
+                  x: [0, -2, 2, -1.5, 1.5, -1, 1, 0],
+                  y: [0, -1, 1, -0.6, 0.6, -0.4, 0.4, 0],
+                  rotate: [0, -0.4, 0.4, -0.2, 0.2, 0],
+                }
+              : {}
+          }
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+          }}
+          className="inline-block"
+        >
+          <motion.p
+            variants={quoteContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            onAnimationComplete={() => setIsLoaded(true)}
+            className="text-lg md:text-2xl font-semibold tracking-wide text-[var(--color-primary)] mb-4"
+          >
+            {quoteText.split(" ").map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block whitespace-nowrap">
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    variants={letterVariants}
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                {wordIndex < quoteText.split(" ").length - 1 && (
+                  <span className="inline-block">&nbsp;</span>
+                )}
+              </span>
+            ))}
+          </motion.p>
+        </motion.div>
         <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-foreground)] mb-4">
           Key Milestones
         </h2>
