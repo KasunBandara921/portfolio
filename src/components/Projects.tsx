@@ -7,6 +7,34 @@ import Image from "next/image";
 
 import portfolioData from "@/data/portfolio.json";
 
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiSpringboot,
+  SiPostgresql,
+  SiPrisma,
+  SiPython,
+  SiDocker,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiGit,
+  SiGithub,
+  SiFirebase,
+  SiMongodb,
+  SiMysql,
+  SiGooglegemini,
+  SiHuggingface,
+  SiArduino,
+  SiEspressif,
+  SiCplusplus,
+} from "react-icons/si";
+import { FaJava, FaAws } from "react-icons/fa6";
+import { TbApi } from "react-icons/tb";
+import { Gamepad2, Code2 } from "lucide-react";
+
 interface Project {
   title: string;
   description: string;
@@ -16,33 +44,37 @@ interface Project {
   demo?: string;
 }
 
-const techEmojis: Record<string, string> = {
-  "react": "⚛️",
-  "next": "🚀",
-  "typescript": "🔷",
-  "javascript": "🟨",
-  "spring": "🍃",
-  "postgres": "🐘",
-  "prisma": "◬",
-  "java": "☕",
-  "python": "🐍",
-  "docker": "🐳",
-  "aws": "☁️",
-  "tailwind": "🌊",
-  "node": "🟢",
-  "git": "🐙",
-  "firebase": "🔥",
-  "mongodb": "💾"
-};
-
-function getTechEmoji(tech: string): string {
+function getTechIcon(tech: string): React.ReactNode {
   const normalized = tech.toLowerCase().trim();
-  for (const [key, value] of Object.entries(techEmojis)) {
-    if (normalized.includes(key)) {
-      return value;
-    }
-  }
-  return "💻";
+
+  if (normalized.includes("next")) return <SiNextdotjs className="text-white" size={13} />;
+  if (normalized.includes("react")) return <SiReact className="text-[#61DAFB]" size={13} />;
+  if (normalized.includes("typescript")) return <SiTypescript className="text-[#3178C6]" size={13} />;
+  if (normalized.includes("javascript")) return <SiJavascript className="text-[#F7DF1E]" size={13} />;
+  if (normalized.includes("spring")) return <SiSpringboot className="text-[#6DB33F]" size={13} />;
+  if (normalized.includes("postgres")) return <SiPostgresql className="text-[#4169E1]" size={13} />;
+  if (normalized.includes("mysql")) return <SiMysql className="text-[#4479A1]" size={13} />;
+  if (normalized.includes("prisma")) return <SiPrisma className="text-white" size={13} />;
+  if (normalized.includes("java")) return <FaJava className="text-[#ED8B00]" size={13} />;
+  if (normalized.includes("python")) return <SiPython className="text-[#3776AB]" size={13} />;
+  if (normalized.includes("docker")) return <SiDocker className="text-[#2496ED]" size={13} />;
+  if (normalized.includes("aws")) return <FaAws className="text-[#FF9900]" size={13} />;
+  if (normalized.includes("tailwind")) return <SiTailwindcss className="text-[#06B6D4]" size={13} />;
+  if (normalized.includes("gemini")) return <SiGooglegemini className="text-[#8E75FF]" size={13} />;
+  if (normalized.includes("hugging")) return <SiHuggingface className="text-[#FFD21E]" size={13} />;
+  if (normalized.includes("github")) return <SiGithub className="text-white" size={13} />;
+  if (normalized.includes("git")) return <SiGit className="text-[#F05032]" size={13} />;
+  if (normalized.includes("node")) return <SiNodedotjs className="text-[#5FA04E]" size={13} />;
+  if (normalized.includes("express")) return <SiExpress className="text-white" size={13} />;
+  if (normalized.includes("firebase")) return <SiFirebase className="text-[#FFCA28]" size={13} />;
+  if (normalized.includes("mongo")) return <SiMongodb className="text-[#47A248]" size={13} />;
+  if (normalized.includes("arduino")) return <SiArduino className="text-[#00878F]" size={13} />;
+  if (normalized.includes("esp8266") || normalized.includes("espressif")) return <SiEspressif className="text-[#E7352C]" size={13} />;
+  if (normalized.includes("c++") || normalized.includes("c/c++")) return <SiCplusplus className="text-[#00599C]" size={13} />;
+  if (normalized.includes("sfml") || normalized.includes("game")) return <Gamepad2 className="text-[#A855F7]" size={13} />;
+  if (normalized.includes("api")) return <TbApi className="text-[#38BDF8]" size={14} />;
+
+  return <Code2 size={13} className="text-[var(--color-primary)]" />;
 }
 
 export default function Projects() {
@@ -185,13 +217,13 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.stack.map((tech) => {
-                    const emoji = getTechEmoji(tech);
+                    const icon = getTechIcon(tech);
                     return (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-[var(--color-foreground)]/70 border border-white/10 hover:bg-white/10 hover:text-[var(--color-foreground)] transition-all duration-300"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-[var(--color-foreground)]/80 border border-white/10 hover:bg-white/10 hover:text-[var(--color-foreground)] hover:border-white/20 transition-all duration-300"
                       >
-                        <span>{emoji}</span>
+                        <span className="shrink-0 flex items-center justify-center">{icon}</span>
                         <span>{tech}</span>
                       </span>
                     );
