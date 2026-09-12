@@ -6,6 +6,7 @@ import ScrollWheel from "@/components/ScrollWheel";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import CommandPalette from "@/components/CommandPalette";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <Preloader />
         <CustomCursor />
         <ScrollProgress />
         <CommandPalette />
