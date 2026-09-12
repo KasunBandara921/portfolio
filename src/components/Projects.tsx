@@ -32,7 +32,7 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa6";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbBrandNextjs } from "react-icons/tb";
 import { Gamepad2, Code2 } from "lucide-react";
 
 interface Project {
@@ -47,14 +47,14 @@ interface Project {
 function getTechIcon(tech: string): React.ReactNode {
   const normalized = tech.toLowerCase().trim();
 
-  if (normalized.includes("next")) return <SiNextdotjs className="text-white" size={13} />;
+  if (normalized.includes("next")) return <TbBrandNextjs className="text-[var(--color-foreground)]" size={14} />;
   if (normalized.includes("react")) return <SiReact className="text-[#61DAFB]" size={13} />;
   if (normalized.includes("typescript")) return <SiTypescript className="text-[#3178C6]" size={13} />;
   if (normalized.includes("javascript")) return <SiJavascript className="text-[#F7DF1E]" size={13} />;
   if (normalized.includes("spring")) return <SiSpringboot className="text-[#6DB33F]" size={13} />;
   if (normalized.includes("postgres")) return <SiPostgresql className="text-[#4169E1]" size={13} />;
   if (normalized.includes("mysql")) return <SiMysql className="text-[#4479A1]" size={13} />;
-  if (normalized.includes("prisma")) return <SiPrisma className="text-white" size={13} />;
+  if (normalized.includes("prisma")) return <SiPrisma className="text-[var(--color-foreground)]" size={13} />;
   if (normalized.includes("java")) return <FaJava className="text-[#ED8B00]" size={13} />;
   if (normalized.includes("python")) return <SiPython className="text-[#3776AB]" size={13} />;
   if (normalized.includes("docker")) return <SiDocker className="text-[#2496ED]" size={13} />;
@@ -62,10 +62,10 @@ function getTechIcon(tech: string): React.ReactNode {
   if (normalized.includes("tailwind")) return <SiTailwindcss className="text-[#06B6D4]" size={13} />;
   if (normalized.includes("gemini")) return <SiGooglegemini className="text-[#8E75FF]" size={13} />;
   if (normalized.includes("hugging")) return <SiHuggingface className="text-[#FFD21E]" size={13} />;
-  if (normalized.includes("github")) return <SiGithub className="text-white" size={13} />;
+  if (normalized.includes("github")) return <SiGithub className="text-[var(--color-foreground)]" size={13} />;
   if (normalized.includes("git")) return <SiGit className="text-[#F05032]" size={13} />;
   if (normalized.includes("node")) return <SiNodedotjs className="text-[#5FA04E]" size={13} />;
-  if (normalized.includes("express")) return <SiExpress className="text-white" size={13} />;
+  if (normalized.includes("express")) return <SiExpress className="text-[var(--color-foreground)]" size={13} />;
   if (normalized.includes("firebase")) return <SiFirebase className="text-[#FFCA28]" size={13} />;
   if (normalized.includes("mongo")) return <SiMongodb className="text-[#47A248]" size={13} />;
   if (normalized.includes("arduino")) return <SiArduino className="text-[#00878F]" size={13} />;
