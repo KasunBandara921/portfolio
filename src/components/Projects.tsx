@@ -179,7 +179,7 @@ export default function Projects() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
-                   {project.title}
+                  {project.title}
                 </h3>
                 <p className="text-[var(--color-muted)] mb-6">{project.description}</p>
 
