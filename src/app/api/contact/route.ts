@@ -30,6 +30,9 @@ export async function POST(request: Request) {
       );
     }
 
+    const privateKey =
+      process.env.EMAILJS_PRIVATE_KEY || process.env.EMAILJS_ACCESS_TOKEN;
+
     // Call EmailJS REST API directly from the server
     const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
@@ -40,6 +43,7 @@ export async function POST(request: Request) {
         service_id: serviceId,
         template_id: templateId,
         user_id: publicKey,
+        accessToken: privateKey,
         template_params: {
           name,
           from_name: name,
@@ -55,7 +59,7 @@ export async function POST(request: Request) {
       const errorText = await response.text();
       console.error("EmailJS API Error:", errorText);
       return NextResponse.json(
-        { error: "Failed to send email through EmailJS service." },
+        { error: `EmailJS error: ${errorText || "Failed to send email."}` },
         { status: response.status }
       );
     }
