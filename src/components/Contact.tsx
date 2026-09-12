@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
+import emailjs from "@emailjs/browser";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,19 +22,32 @@ export default function Contact() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const serviceId =
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_y4vi687";
+      const templateId =
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_30kfd6s";
+      const publicKey =
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "4EK-GSlUN2_nYeiRY";
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to deliver message.");
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          "EmailJS credentials are missing. Please check your environment variables."
+        );
       }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          from_name: formData.name,
+          email: formData.email,
+          from_email: formData.email,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      );
 
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -43,10 +58,13 @@ export default function Contact() {
     } catch (err: unknown) {
       console.error("Email send error:", err);
       setIsSubmitting(false);
-      const msg =
-        err instanceof Error
-          ? err.message
-          : "Failed to deliver message. Please email directly at bandarakasun495@gmail.com.";
+      
+      let msg = "Failed to deliver message. Please email directly at bandarakasun495@gmail.com.";
+      if (err && typeof err === "object" && "text" in err && typeof (err as { text: unknown }).text === "string") {
+        msg = (err as { text: string }).text;
+      } else if (err instanceof Error) {
+        msg = err.message;
+      }
       setErrorMessage(msg);
     }
   };
