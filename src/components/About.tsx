@@ -59,16 +59,20 @@ export default function About() {
         className="p-8 md:p-12 rounded-[32px] bg-[var(--color-card)] border border-[var(--color-card-border)] shadow-xl"
       >
         <h2 className="text-4xl font-bold mb-8 text-[var(--color-foreground)]">About Me</h2>
-        <p className="text-[var(--color-muted)] text-lg mb-6 leading-relaxed">
-          I am a second-year undergraduate at the University of Moratuwa, specializing in 
-          Information Technology and Management. My journey is driven by a passion for 
-          crafting efficient, scalable, and visually stunning digital experiences.
-        </p>
-        <p className="text-[var(--color-muted)] text-lg mb-8 leading-relaxed">
-          Currently, I am focused on mastering the intersection of robust backend 
-          architectures with modern, responsive frontend frameworks. I enjoy solving 
-          complex problems through clean code and strategic software design.
-        </p>
+        <div className="space-y-5 text-[var(--color-muted)] text-base md:text-lg leading-relaxed mb-8">
+          <p>
+            I’m a third-year Information Technology and Management undergraduate at the University of Moratuwa, passionate about building reliable, scalable, and user-focused software.
+          </p>
+          <p>
+            I enjoy working across the full stack, with a strong focus on Next.js, TypeScript, Java, Spring Boot, and PostgreSQL. Through academic and personal projects, I’ve gained hands-on experience designing REST APIs, building responsive web applications, integrating AI services, and working with databases and authentication systems.
+          </p>
+          <p>
+            Beyond application development, I’m exploring cloud computing, AWS, Docker, DevOps, and software architecture. I believe in understanding the fundamentals behind the technologies I use and writing clean, maintainable code that solves real problems.
+          </p>
+          <p>
+            Currently, I’m looking for opportunities to grow as a Software Engineer, contribute to meaningful projects, and learn from experienced engineering teams.
+          </p>
+        </div>
 
         <div className="grid grid-cols-2 gap-6 pt-6 border-t border-[var(--color-card-border)]">
           <div>
