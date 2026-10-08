@@ -255,11 +255,11 @@ export default function Projects() {
                   >
                     <ExternalLink size={16} /> Demo
                   </a>
-                ) : (
+                ) : project.demo !== undefined ? (
                   <span className="flex items-center gap-2 text-sm font-medium text-[var(--color-muted)] opacity-50 cursor-not-allowed">
                     <ExternalLink size={16} /> Demo
                   </span>
-                )}
+                ) : null}
               </div>
             </motion.div>
           ))}

@@ -72,8 +72,7 @@
         "Docker"
       ],
       "image": "/pos.png",
-      "github": "https://github.com/KasunBandara921/pos-system",
-      "demo": ""
+      "github": "https://github.com/KasunBandara921/pos-system"
     },
     {
       "title": "AI-powered Expense Manager",
@@ -166,7 +165,8 @@
         "Game Design"
       ],
       "image": "/ice-cube-drop.jpg",
-      "github": ""
+      "github": "",
+      "demo": ""
     }
   ],
   "milestones": [
